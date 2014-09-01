@@ -18,11 +18,11 @@ class Request
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
             $url = explode('/', $url);
             $url = array_filter($url);
-        }
-        
+            
         $this->_controlador = strtolower(array_shift($url));
         $this->_metodo = strtolower(array_shift($url));
         $this->_argumentos = $url;
+        }
         
         if(!$this->_controlador){
             $this->_controlador = DEFAULT_CONTROLLER;

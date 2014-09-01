@@ -12,6 +12,12 @@ require_once APP_PATH . 'Model.php';
 require_once APP_PATH . 'View.php';
 require_once APP_PATH . 'Registro.php';
 
-Bootstrap::run(new Request);
+try {
+    Bootstrap::run(new Request);
+} 
+
+catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 ?>
